@@ -58,13 +58,13 @@ window.STUDIFY_CONTENT = {
 
   tests: {
     alexanderIAdvancedTest: {
-  id: "alexanderIAdvancedTest",
-  subjectId: "history",
-  title: "Правление Александра I: сложный тест",
-  subtitle: "История",
-  resultTitle: "Тест завершен",
-  xpReward: 30,
-  questions: [
+      id: "alexanderIAdvancedTest",
+      subjectId: "history",
+      title: "Правление Александра I: сложный тест",
+      subtitle: "История",
+      resultTitle: "Тест завершен",
+      xpReward: 30,
+      questions: [
     {
       question: "Какой орган был учреждён в 1801 году как высший законосовещательный орган при Александре I?",
       answers: [
@@ -231,7 +231,7 @@ window.STUDIFY_CONTENT = {
       hint: "Военные поселения стали символом аракчеевщины."
     }
   ]
-}
+},
     accent: {
       id: "accent",
       subjectId: "russian",
