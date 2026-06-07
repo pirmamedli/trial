@@ -1,0 +1,14 @@
+{
+  "subjects": "subjects.json",
+  "tests": [
+    "tests/accent/test.json",
+    "tests/speed-math/test.json",
+    "tests/word-formation/test.json",
+    "tests/history-task18/test.json",
+    "tests/history-trial1/test.json",
+    "tests/peter-mini/test.json",
+    "tests/social-law/test.json",
+    "tests/future-perfect/test.json",
+    "tests/geography-maps/test.json"
+  ]
+}

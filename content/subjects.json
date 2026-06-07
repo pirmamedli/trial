@@ -1,0 +1,80 @@
+[
+  {
+    "id": "russian",
+    "title": "Русский язык",
+    "icon": "./assets/subjects/russian.png",
+    "progress": 63,
+    "tasksDone": 42,
+    "focus": "Орфоэпия, словообразование, сочинение",
+    "weakTopics": [
+      "Словообразование",
+      "Ударения",
+      "Паронимы"
+    ]
+  },
+  {
+    "id": "basic-math",
+    "title": "Базовая математика",
+    "icon": "./assets/subjects/basic-math.png",
+    "progress": 27,
+    "tasksDone": 18,
+    "focus": "Проценты, графики, текстовые задачи",
+    "weakTopics": [
+      "Скорость, время, расстояние",
+      "Проценты",
+      "Вероятность"
+    ]
+  },
+  {
+    "id": "history",
+    "title": "История",
+    "icon": "./assets/subjects/history.png",
+    "progress": 41,
+    "tasksDone": 32,
+    "focus": "Петр I, XVIII век, культура",
+    "weakTopics": [
+      "Петр I и реформы",
+      "Культура XVIII века",
+      "Исторические источники"
+    ]
+  },
+  {
+    "id": "social",
+    "title": "Обществознание",
+    "icon": "./assets/subjects/social-studies.png",
+    "progress": 34,
+    "tasksDone": 21,
+    "focus": "Право, экономика, социальные отношения",
+    "weakTopics": [
+      "Право",
+      "Экономические системы",
+      "Социальные нормы"
+    ]
+  },
+  {
+    "id": "english",
+    "title": "Английский язык",
+    "icon": "./assets/subjects/english.png",
+    "progress": 52,
+    "tasksDone": 28,
+    "focus": "Грамматика, письмо, чтение",
+    "weakTopics": [
+      "Future Perfect",
+      "Словообразование",
+      "Письмо"
+    ]
+  },
+  {
+    "id": "geography",
+    "title": "География",
+    "icon": "./assets/subjects/geography.png",
+    "progress": 30,
+    "tasksDone": 16,
+    "focus": "Карты, регионы России, климат",
+    "weakTopics": [
+      "Климатограммы",
+      "Регионы России",
+      "Мировое хозяйство"
+    ]
+  }
+]
