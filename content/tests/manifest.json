@@ -1,0 +1,9 @@
+{
+  "name": "Стадифай",
+  "short_name": "Стадифай",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff8ee",
+  "theme_color": "#f26a00",
+  "lang": "ru"
+}
