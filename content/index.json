@@ -3,6 +3,7 @@
   "tests": [
     "tests/social-economy/test.json",
     "tests/russian-orthoepy/test.json",
+    "tests/history-dates-1825-1914/test.json",
     "tests/alexander-i-advanced/test.json"
   ]
 }
