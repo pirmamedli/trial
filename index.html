@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff6e8">
+    <title>Стадифай - образовательный портал</title>
+    <link rel="stylesheet" href="./styles.css?v=20260607-1">
+  </head>
+  <body>
+    <main class="app-shell" aria-label="Образовательный портал Стадифай">
+      <section class="splash-screen" id="splash" aria-label="Экран приветствия">
+        <div class="splash-brand">стадифай</div>
+        <div class="splash-speech" aria-label="Приветствие от маскота">
+          <span>Привет, Мурад!</span>
+          <strong>Готов к новым свершениям?</strong>
+        </div>
+        <img class="splash-mascot" src="./assets/mascot-transparent.png" alt="Маскот Стадифай приветствует пользователя">
+      </section>
+
+      <section class="auth-screen" id="auth" aria-label="Вход в личный кабинет">
+        <header class="auth-header">
+          <p class="eyebrow">Личный кабинет</p>
+          <h1>Войти в Стадифай</h1>
+          <p>Аккаунт нужен, чтобы сохранять прогресс, сравнивать результаты и учиться вместе с друзьями.</p>
+        </header>
+
+        <form class="auth-form" id="auth-form">
+          <label>
+            Имя ученика
+            <input id="student-name" name="studentName" type="text" value="Мурад" autocomplete="given-name" required>
+          </label>
+
+          <label>
+            Класс или группа
+            <input id="student-group" name="studentGroup" type="text" value="11 класс" autocomplete="organization-title" required>
+          </label>
+
+          <label>
+            Код друга или класса
+            <input id="friend-code" name="friendCode" type="text" value="EGE-2026" autocomplete="off">
+          </label>
+
+          <div class="role-picker" aria-label="Роль аккаунта">
+            <input id="role-student" type="radio" name="role" value="Ученик" checked>
+            <label for="role-student">Ученик</label>
+            <input id="role-parent" type="radio" name="role" value="Родитель">
+            <label for="role-parent">Родитель</label>
+          </div>
+
+          <button class="primary-action" type="submit">Войти в кабинет</button>
+        </form>
+
+        <section class="account-preview" aria-label="Что появится в аккаунте">
+          <article>
+            <strong>Прогресс</strong>
+            <span>уроки, баллы, серии</span>
+          </article>
+          <article>
+            <strong>Друзья</strong>
+            <span>код класса и приглашения</span>
+          </article>
+          <article>
+            <strong>Лидерборд</strong>
+            <span>место среди одноклассников</span>
+          </article>
+        </section>
+
+        <img class="auth-mascot" src="./assets/mascot-transparent.png" alt="" aria-hidden="true">
+      </section>
+
+      <section class="portal-screen" id="portal" aria-label="Главная страница портала" aria-hidden="true">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Стадифай</p>
+            <h1>Привет, <span id="profile-name">Мурад</span></h1>
+          </div>
+          <button class="avatar-button" id="logout-button" type="button" aria-label="Выйти из профиля">М</button>
+        </header>
+
+        <section class="profile-strip" aria-label="Профиль ученика">
+          <div>
+            <span>Звание</span>
+            <strong>Магистр</strong>
+          </div>
+          <div>
+            <span>Класс</span>
+            <strong>11</strong>
+          </div>
+          <div>
+            <span>Серия</span>
+            <strong>25 дней</strong>
+          </div>
+        </section>
+
+        <div class="view-stack">
+          <section class="app-view active" id="home-screen" aria-label="Домой">
+            <form class="search" role="search">
+              <span aria-hidden="true">⌕</span>
+              <input type="search" placeholder="Найти курс, урок или задание" aria-label="Поиск">
+            </form>
+
+            <section class="daily-plan-card" aria-labelledby="today-plan-title">
+              <div class="plan-head">
+                <div>
+                  <p class="eyebrow">Фокус на сегодня</p>
+                  <h2 id="today-plan-title">Сегодняшний план</h2>
+                </div>
+                <strong>+45 XP</strong>
+              </div>
+
+              <div class="plan-list">
+                <button class="plan-item" type="button">
+                  <span></span>
+                  <strong>Русский язык</strong>
+                  <em>10 заданий</em>
+                </button>
+                <button class="plan-item" type="button">
+                  <span></span>
+                  <strong>История</strong>
+                  <em>5 карточек</em>
+                </button>
+                <button class="plan-item" type="button">
+                  <span></span>
+                  <strong>Математика</strong>
+                  <em>3 задачи</em>
+                </button>
+              </div>
+            </section>
+
+            <button class="progress-hero" id="today-progress" type="button" aria-label="Перейти к заданиям на сегодня">
+              <div>
+                <p>Ближайшая цель</p>
+                <h2>До звания “Профессор” осталось 80 XP</h2>
+              </div>
+              <div class="progress-ring" aria-label="Прогресс 68 процентов">
+                <span>68%</span>
+              </div>
+            </button>
+
+            <section class="streak-card" aria-label="Текущая серия">
+              <div>
+                <p>Серия сохранена</p>
+                <strong>🔥 25 дней подряд</strong>
+              </div>
+              <span>+8 XP сегодня</span>
+            </section>
+
+            <button class="exam-panel" id="exam-panel" type="button" aria-label="Открыть задания для подготовки к ЕГЭ">
+              <div>
+                <p>До ЕГЭ осталось</p>
+                <h2>65 дней</h2>
+                <span>Сегодня можно закрыть 3 мини-цели и поднять шанс на +4 балла.</span>
+              </div>
+              <div class="exam-orbit" aria-hidden="true">
+                <span>65</span>
+              </div>
+            </button>
+
+            <section class="prep-progress" aria-labelledby="prep-progress-title">
+              <div class="section-heading">
+                <h2 id="prep-progress-title">Подготовка к ЕГЭ</h2>
+                <button type="button">Обзор</button>
+              </div>
+
+              <div class="prep-list" id="prep-list">
+                <article style="--value: 63%">
+                  <div><img src="./assets/subjects/russian.png" alt="" aria-hidden="true"><strong>Русский язык</strong><span>63%</span></div>
+                  <progress max="100" value="63">63%</progress>
+                </article>
+                <article style="--value: 41%">
+                  <div><img src="./assets/subjects/history.png" alt="" aria-hidden="true"><strong>История</strong><span>41%</span></div>
+                  <progress max="100" value="41">41%</progress>
+                </article>
+                <article style="--value: 27%">
+                  <div><img src="./assets/subjects/basic-math.png" alt="" aria-hidden="true"><strong>Математика</strong><span>27%</span></div>
+                  <progress max="100" value="27">27%</progress>
+                </article>
+              </div>
+            </section>
+
+            <section class="section-block" aria-labelledby="subjects-title">
+              <div class="section-heading">
+                <h2 id="subjects-title">Мои предметы</h2>
+                <button type="button" id="subjects-count">6 предметов</button>
+              </div>
+
+              <div class="subject-grid" id="subject-grid">
+                <article class="subject-card">
+                  <span class="subject-icon"><img src="./assets/subjects/russian.png" alt="" aria-hidden="true"></span>
+                  <strong>Русский язык</strong>
+                </article>
+                <article class="subject-card">
+                  <span class="subject-icon"><img src="./assets/subjects/history.png" alt="" aria-hidden="true"></span>
+                  <strong>История</strong>
+                </article>
+                <article class="subject-card">
+                  <span class="subject-icon"><img src="./assets/subjects/english.png" alt="" aria-hidden="true"></span>
+                  <strong>Английский язык</strong>
+                </article>
+                <article class="subject-card">
+                  <span class="subject-icon"><img src="./assets/subjects/basic-math.png" alt="" aria-hidden="true"></span>
+                  <strong>Базовая математика</strong>
+                </article>
+              </div>
+            </section>
+          </section>
+
+          <section class="app-view" id="subject-screen" aria-labelledby="subject-title">
+            <div class="section-heading">
+              <h2 id="subject-title">Предмет</h2>
+              <button type="button" id="close-subject">Домой</button>
+            </div>
+
+            <section class="subject-detail-card" aria-label="Прогресс предмета">
+              <span class="subject-detail-icon"><img id="subject-detail-icon" src="./assets/subjects/russian.png" alt="" aria-hidden="true"></span>
+              <div>
+                <p class="eyebrow" id="subject-detail-focus">Подготовка к ЕГЭ</p>
+                <h3 id="subject-detail-name">Русский язык</h3>
+                <span id="subject-detail-meta">63% подготовки · 42 задания</span>
+                <progress id="subject-detail-progress" max="100" value="63">63%</progress>
+              </div>
+            </section>
+
+            <section class="section-block" aria-labelledby="subject-tasks-title">
+              <div class="section-heading">
+                <h2 id="subject-tasks-title">Задания предмета</h2>
+                <button type="button" id="subject-task-count">0</button>
+              </div>
+              <div class="task-list" id="subject-task-list"></div>
+            </section>
+
+            <section class="weak-topics" aria-labelledby="subject-weak-title">
+              <div class="section-heading">
+                <h2 id="subject-weak-title">Слабые темы</h2>
+                <button type="button">Повторить</button>
+              </div>
+              <div class="weak-topic-list" id="subject-weak-list"></div>
+            </section>
+          </section>
+
+          <section class="app-view" id="tasks-screen" aria-labelledby="tasks-title">
+            <div class="section-heading">
+              <h2 id="tasks-title">Ближайшие задания</h2>
+              <button type="button" id="open-calendar">Календарь</button>
+            </div>
+
+            <div class="task-list" id="task-list">
+              <button class="task-item task-button" id="open-accent-test" type="button">
+                <time datetime="2026-06-02">Сегодня</time>
+                <img src="./assets/subjects/russian.png" alt="" aria-hidden="true">
+                <strong>Ударения по русскому языку</strong>
+                <span>+15 XP</span>
+              </button>
+              <button class="task-item task-button xp-task" type="button" data-xp="15">
+                <time datetime="2026-06-02">Сегодня</time>
+                <img src="./assets/subjects/basic-math.png" alt="" aria-hidden="true">
+                <strong>Задачи на скорость, время и расстояние</strong>
+                <span>+15 XP</span>
+              </button>
+              <button class="task-item task-button xp-task" type="button" data-xp="25">
+                <time datetime="2026-06-02">Сегодня</time>
+                <img src="./assets/subjects/russian.png" alt="" aria-hidden="true">
+                <strong>Словообразование на ЕГЭ</strong>
+                <span>+25 XP</span>
+              </button>
+              <button class="task-item task-button xp-task" type="button" data-xp="15">
+                <time datetime="2026-06-02">Сегодня</time>
+                <img src="./assets/subjects/history.png" alt="" aria-hidden="true">
+                <strong>18 задание по истории</strong>
+                <span>+15 XP</span>
+              </button>
+              <button class="task-item task-button" id="open-history-test" type="button">
+                <time datetime="2026-06-02">История</time>
+                <img src="./assets/subjects/history.png" alt="" aria-hidden="true">
+                <strong>Пробник ЕГЭ №1</strong>
+                <span>+50 XP</span>
+              </button>
+              <button class="task-item task-button xp-task" type="button" data-xp="20">
+                <time datetime="2026-06-03">Завтра</time>
+                <img src="./assets/subjects/history.png" alt="" aria-hidden="true">
+                <strong>Мини-тест по Петру I</strong>
+                <span>+20 XP</span>
+              </button>
+            </div>
+
+            <div class="xp-toast" id="xp-toast" aria-live="polite">+15 XP · До звания “Профессор” осталось 65 XP</div>
+          </section>
+
+          <section class="app-view" id="calendar-screen" aria-labelledby="calendar-title">
+            <div class="section-heading">
+              <h2 id="calendar-title">Календарь подготовки</h2>
+              <button type="button" id="close-calendar">Задания</button>
+            </div>
+
+            <section class="calendar-hero" aria-label="План месяца">
+              <div>
+                <p class="eyebrow">Июнь 2026</p>
+                <h3>План на ближайшее время</h3>
+                <span>Каждый день закрывает маленький блок и двигает тебя к следующему званию.</span>
+              </div>
+              <strong>+320 XP</strong>
+            </section>
+
+            <div class="calendar-week" aria-hidden="true">
+              <span>Пн</span>
+              <span>Вт</span>
+              <span>Ср</span>
+              <span>Чт</span>
+              <span>Пт</span>
+              <span>Сб</span>
+              <span>Вс</span>
+            </div>
+
+            <section class="calendar-grid" aria-label="Планы по дням">
+              <article class="calendar-day is-empty" aria-hidden="true"></article>
+              <article class="calendar-day is-empty" aria-hidden="true"></article>
+              <article class="calendar-day is-empty" aria-hidden="true"></article>
+              <article class="calendar-day is-empty" aria-hidden="true"></article>
+              <article class="calendar-day is-empty" aria-hidden="true"></article>
+              <article class="calendar-day is-empty" aria-hidden="true"></article>
+              <article class="calendar-day is-today">
+                <time datetime="2026-06-07">7</time>
+                <strong>Русский: ударения</strong>
+                <span>+15 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-08">8</time>
+                <strong>История: пробник №1</strong>
+                <span>+50 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-09">9</time>
+                <strong>Математика: скорость</strong>
+                <span>+15 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-10">10</time>
+                <strong>Русский: словообразование</strong>
+                <span>+25 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-11">11</time>
+                <strong>История: Пётр I</strong>
+                <span>+20 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-12">12</time>
+                <strong>Повтор ошибок</strong>
+                <span>+10 XP</span>
+              </article>
+              <article class="calendar-day is-rest">
+                <time datetime="2026-06-13">13</time>
+                <strong>Лёгкое повторение</strong>
+                <span>+8 XP</span>
+              </article>
+              <article class="calendar-day is-rest">
+                <time datetime="2026-06-14">14</time>
+                <strong>Флеш-карточки</strong>
+                <span>+8 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-15">15</time>
+                <strong>Русский: тест 10 слов</strong>
+                <span>+15 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-16">16</time>
+                <strong>История: даты</strong>
+                <span>+20 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-17">17</time>
+                <strong>Математика: задачи</strong>
+                <span>+15 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-18">18</time>
+                <strong>История: задание 18</strong>
+                <span>+15 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-19">19</time>
+                <strong>Разбор ошибок</strong>
+                <span>+12 XP</span>
+              </article>
+              <article class="calendar-day is-rest">
+                <time datetime="2026-06-20">20</time>
+                <strong>Мини-повтор</strong>
+                <span>+8 XP</span>
+              </article>
+              <article class="calendar-day is-rest">
+                <time datetime="2026-06-21">21</time>
+                <strong>Карточки истории</strong>
+                <span>+8 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-22">22</time>
+                <strong>Русский: орфоэпия</strong>
+                <span>+15 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-23">23</time>
+                <strong>История: культура</strong>
+                <span>+20 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-24">24</time>
+                <strong>Математика: проценты</strong>
+                <span>+15 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-25">25</time>
+                <strong>Пробник: часть 1</strong>
+                <span>+50 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-26">26</time>
+                <strong>Слабые темы</strong>
+                <span>+12 XP</span>
+              </article>
+              <article class="calendar-day is-rest">
+                <time datetime="2026-06-27">27</time>
+                <strong>Повтор формул</strong>
+                <span>+8 XP</span>
+              </article>
+              <article class="calendar-day is-rest">
+                <time datetime="2026-06-28">28</time>
+                <strong>Лёгкий день</strong>
+                <span>+8 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-29">29</time>
+                <strong>Русский: мини-тест</strong>
+                <span>+15 XP</span>
+              </article>
+              <article class="calendar-day">
+                <time datetime="2026-06-30">30</time>
+                <strong>Итоги месяца</strong>
+                <span>+25 XP</span>
+              </article>
+            </section>
+          </section>
+
+          <section class="app-view" id="rating-screen" aria-labelledby="leaderboard-title">
+            <div class="section-heading">
+              <h2 id="leaderboard-title">Звание</h2>
+              <button type="button" id="copy-code">Код: EGE-2026</button>
+            </div>
+
+            <section class="rank-path" aria-labelledby="rank-chart-title">
+              <div class="rank-chart-head">
+                <div>
+                  <p>Текущее звание</p>
+                  <h3 id="rank-chart-title">Магистр</h3>
+                </div>
+                <strong>840 очков</strong>
+              </div>
+
+              <div class="rank-ladder" aria-label="Лестница званий">
+                <button type="button" data-rank="Новичок" data-score="80" data-streak="2" style="--accent:#6fb56f;--progress:100%">
+                  <span aria-hidden="true">01</span>
+                  <strong>Новичок</strong>
+                  <em></em>
+                </button>
+                <button type="button" data-rank="Ученик" data-score="180" data-streak="5" style="--accent:#4f9bd8;--progress:100%">
+                  <span aria-hidden="true">02</span>
+                  <strong>Ученик</strong>
+                  <em></em>
+                </button>
+                <button type="button" data-rank="Исследователь" data-score="320" data-streak="9" style="--accent:#8b72d9;--progress:100%">
+                  <span aria-hidden="true">03</span>
+                  <strong>Исследователь</strong>
+                  <em></em>
+                </button>
+                <button type="button" data-rank="Знаток" data-score="470" data-streak="14" style="--accent:#d99c3a;--progress:100%">
+                  <span aria-hidden="true">04</span>
+                  <strong>Знаток</strong>
+                  <em></em>
+                </button>
+                <button type="button" data-rank="Эксперт" data-score="650" data-streak="19" style="--accent:#e46f52;--progress:100%">
+                  <span aria-hidden="true">05</span>
+                  <strong>Эксперт</strong>
+                  <em></em>
+                </button>
+                <button class="current" type="button" data-rank="Магистр" data-score="840" data-streak="25" style="--accent:#f26a00;--progress:68%">
+                  <span aria-hidden="true">06</span>
+                  <strong>Магистр</strong>
+                  <em></em>
+                </button>
+                <button type="button" data-rank="Профессор" data-score="1100" data-streak="35" style="--accent:#c86bde;--progress:0%">
+                  <span aria-hidden="true">07</span>
+                  <strong>Профессор</strong>
+                  <em></em>
+                </button>
+                <button type="button" data-rank="Академик" data-score="1400" data-streak="50" style="--accent:#2f2a21;--progress:0%">
+                  <span aria-hidden="true">08</span>
+                  <strong>Академик</strong>
+                  <em></em>
+                </button>
+              </div>
+
+              <p class="rank-note" id="rank-note">Магистр: 840 очков, серия 25 дней. Звание растет от очков, серии и ежедневных заходов.</p>
+            </section>
+
+            <div class="section-heading stats-heading">
+              <h2>Статистика</h2>
+              <button type="button">Месяц</button>
+            </div>
+
+            <div class="stats-hero">
+              <div>
+                <span>76%</span>
+                <strong>правильных ответов за последний месяц</strong>
+              </div>
+              <div class="stats-ring" aria-hidden="true">76</div>
+            </div>
+
+            <div class="stats-grid">
+              <article>
+                <span>545</span>
+                <strong>правильных ответов</strong>
+              </article>
+              <article>
+                <span>86</span>
+                <strong>неправильных ответов</strong>
+              </article>
+            </div>
+
+            <div class="section-heading leaderboard-heading">
+              <h2>Рейтинг друзей</h2>
+              <button type="button">Топ-3</button>
+            </div>
+
+            <div class="leaderboard-list">
+              <article class="leaderboard-item current-user">
+                <span class="rank">1</span>
+                <div>
+                  <strong id="leader-name">Мурад</strong>
+                  <p>Твой прогресс</p>
+                </div>
+                <span class="score">840</span>
+              </article>
+              <article class="leaderboard-item">
+                <span class="rank">2</span>
+                <div>
+                  <strong>Алина</strong>
+                  <p>Одноклассница</p>
+                </div>
+                <span class="score">790</span>
+              </article>
+              <article class="leaderboard-item">
+                <span class="rank">3</span>
+                <div>
+                  <strong>Тимур</strong>
+                  <p>Друг</p>
+                </div>
+                <span class="score">760</span>
+              </article>
+            </div>
+          </section>
+
+          <section class="app-view test-screen" id="accent-test-screen" aria-labelledby="accent-test-title">
+            <header class="test-header">
+              <button class="test-close" id="close-accent-test" type="button" aria-label="Вернуться к заданиям">×</button>
+              <p class="eyebrow">Русский язык</p>
+              <h2 id="accent-test-title">Ударения на ЕГЭ</h2>
+              <span id="test-step">Вопрос 1 из 3</span>
+            </header>
+
+            <div class="test-progress" aria-hidden="true">
+              <span id="test-progress-bar"></span>
+            </div>
+
+            <section class="test-question">
+              <p id="test-question-text">Выберите слово с верным ударением.</p>
+              <div class="answer-list" id="answer-list"></div>
+              <p class="answer-feedback" id="answer-feedback" aria-live="polite"></p>
+            </section>
+
+            <footer class="test-actions">
+              <button class="secondary-action" id="prev-question" type="button">Назад</button>
+              <button class="primary-action test-next" id="next-question" type="button">Дальше</button>
+            </footer>
+
+            <section class="test-result" id="test-result" hidden aria-live="polite">
+              <p class="eyebrow">Результат теста</p>
+              <h3>Орфоэпия стала сильнее</h3>
+              <div class="result-score">
+                <strong id="result-percent">0%</strong>
+                <span id="result-correct">0 из 3 правильных ответов</span>
+              </div>
+              <div class="result-xp">
+                <span id="result-xp">+0 XP</span>
+                <p>До звания “Профессор” осталось <strong id="result-rank-left">80 XP</strong></p>
+                <progress id="result-rank-progress" max="100" value="68">68%</progress>
+              </div>
+              <div class="result-actions">
+                <button class="secondary-action" id="repeat-mistakes" type="button">Повторить ошибки</button>
+                <button class="primary-action" id="next-test" type="button">Следующий тест</button>
+              </div>
+            </section>
+          </section>
+
+          <section class="app-view test-screen" id="history-test-screen" aria-labelledby="history-test-title">
+            <header class="test-header">
+              <button class="test-close" id="close-history-test" type="button" aria-label="Вернуться к заданиям">×</button>
+              <p class="eyebrow">История</p>
+              <h2 id="history-test-title">Пробник по истории. Часть 1</h2>
+              <span id="history-test-step">Вопрос 1 из 3</span>
+            </header>
+
+            <div class="test-progress" aria-hidden="true">
+              <span id="history-test-progress-bar"></span>
+            </div>
+
+            <section class="test-question">
+              <p id="history-test-question-text">Выберите правильный ответ.</p>
+              <div class="answer-list" id="history-answer-list"></div>
+              <p class="answer-feedback" id="history-answer-feedback" aria-live="polite"></p>
+            </section>
+
+            <footer class="test-actions">
+              <button class="secondary-action" id="history-prev-question" type="button">Назад</button>
+              <button class="primary-action test-next" id="history-next-question" type="button">Дальше</button>
+            </footer>
+
+            <section class="test-result" id="history-test-result" hidden aria-live="polite">
+              <p class="eyebrow">Результат теста</p>
+              <h3>Пробник завершён</h3>
+              <div class="result-score">
+                <strong id="history-result-percent">0%</strong>
+                <span id="history-result-correct">0 из 3 правильных ответов</span>
+              </div>
+              <div class="result-xp">
+                <span id="history-result-xp">+0 XP</span>
+                <p>До звания “Профессор” осталось <strong id="history-result-rank-left">80 XP</strong></p>
+                <progress id="history-result-rank-progress" max="100" value="68">68%</progress>
+              </div>
+              <div class="result-actions">
+                <button class="secondary-action" id="history-repeat-mistakes" type="button">Повторить ошибки</button>
+                <button class="primary-action" id="history-next-test" type="button">Следующий тест</button>
+              </div>
+            </section>
+          </section>
+
+          <section class="app-view test-screen" id="dynamic-test-screen" aria-labelledby="dynamic-test-title">
+            <header class="test-header">
+              <button class="test-close" id="close-dynamic-test" type="button" aria-label="Вернуться к заданиям">×</button>
+              <p class="eyebrow" id="dynamic-test-subtitle">Предмет</p>
+              <h2 id="dynamic-test-title">Тест</h2>
+              <span id="dynamic-test-step">Вопрос 1 из 3</span>
+            </header>
+
+            <div class="test-progress" aria-hidden="true">
+              <span id="dynamic-test-progress-bar"></span>
+            </div>
+
+            <section class="test-question">
+              <p id="dynamic-test-question-text">Выберите правильный ответ.</p>
+              <div class="answer-list" id="dynamic-answer-list"></div>
+              <p class="answer-feedback" id="dynamic-answer-feedback" aria-live="polite"></p>
+            </section>
+
+            <footer class="test-actions">
+              <button class="secondary-action" id="dynamic-prev-question" type="button">Назад</button>
+              <button class="primary-action test-next" id="dynamic-next-question" type="button">Дальше</button>
+            </footer>
+
+            <section class="test-result" id="dynamic-test-result" hidden aria-live="polite">
+              <p class="eyebrow">Результат теста</p>
+              <h3 id="dynamic-result-title">Тест завершен</h3>
+              <div class="result-score">
+                <strong id="dynamic-result-percent">0%</strong>
+                <span id="dynamic-result-correct">0 из 3 правильных ответов</span>
+              </div>
+              <div class="result-xp">
+                <span id="dynamic-result-xp">+0 XP</span>
+                <p>До следующего звания осталось <strong id="dynamic-result-rank-left">80 XP</strong></p>
+                <progress id="dynamic-result-rank-progress" max="100" value="68">68%</progress>
+              </div>
+              <div class="result-actions">
+                <button class="secondary-action" id="dynamic-repeat-mistakes" type="button">Повторить ошибки</button>
+                <button class="primary-action" id="dynamic-next-test" type="button">Следующий тест</button>
+              </div>
+            </section>
+          </section>
+
+          <section class="app-view" id="materials-screen" aria-labelledby="materials-title">
+            <div class="section-heading">
+              <h2 id="materials-title">Материалы</h2>
+              <button type="button">Библиотека</button>
+            </div>
+
+            <section class="weak-topics" aria-labelledby="weak-topics-title">
+              <div class="section-heading">
+                <h2 id="weak-topics-title">Мои слабые темы</h2>
+                <button type="button">Автоанализ</button>
+              </div>
+              <div class="weak-topic-list" id="weak-topic-list">
+                <article>
+                  <img src="./assets/subjects/russian.png" alt="" aria-hidden="true">
+                  <strong>Словообразование</strong>
+                  <span>48%</span>
+                  <progress max="100" value="48">48%</progress>
+                </article>
+                <article>
+                  <img src="./assets/subjects/history.png" alt="" aria-hidden="true">
+                  <strong>Пётр I и реформы</strong>
+                  <span>52%</span>
+                  <progress max="100" value="52">52%</progress>
+                </article>
+                <article>
+                  <img src="./assets/subjects/basic-math.png" alt="" aria-hidden="true">
+                  <strong>Скорость, время, расстояние</strong>
+                  <span>57%</span>
+                  <progress max="100" value="57">57%</progress>
+                </article>
+              </div>
+            </section>
+
+            <div class="resource-grid">
+              <article class="resource-card">
+                <span class="resource-icon resource-icon-large"><img src="./assets/subjects/literature.png" alt="" aria-hidden="true"></span>
+                <strong>Конспекты</strong>
+                <p>Короткие шпаргалки по урокам</p>
+              </article>
+              <article class="resource-card">
+                <span class="resource-icon resource-icon-large"><img src="./assets/subjects/english.png" alt="" aria-hidden="true"></span>
+                <strong>Карточки для запоминания</strong>
+                <p>Быстрые флеш-карточки перед школой</p>
+              </article>
+              <article class="resource-card resource-card-wide">
+                <span class="resource-icon"><img src="./assets/subjects/russian.png" alt="" aria-hidden="true"></span>
+                <strong>Разбор ошибок</strong>
+                <p>Автоматически собираем ошибки и показываем, что повторить</p>
+              </article>
+              <article class="resource-card">
+                <span class="resource-icon"><img src="./assets/subjects/math.png" alt="" aria-hidden="true"></span>
+                <strong>Пробники</strong>
+                <p>Полные варианты ОГЭ и ЕГЭ</p>
+              </article>
+              <article class="resource-card">
+                <span class="resource-icon resource-icon-large"><img src="./assets/subjects/history.png" alt="" aria-hidden="true"></span>
+                <strong>Мои ошибки</strong>
+                <p>На что нужно обратить внимание в ходе подготовки</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="app-view" id="settings-screen" aria-labelledby="profile-title">
+            <div class="section-heading">
+              <h2 id="profile-title">Профиль</h2>
+              <button type="button">Настройки</button>
+            </div>
+
+            <section class="profile-card" aria-labelledby="profile-card-title">
+              <div>
+                <p class="eyebrow">Профиль</p>
+                <h3 id="profile-card-title">Магистр · 840 XP</h3>
+                <span>Серия 25 дней, 128 заданий и 18 тестов</span>
+              </div>
+              <div class="profile-metrics">
+                <article><strong>128</strong><span>заданий</span></article>
+                <article><strong>18</strong><span>тестов</span></article>
+                <article><strong>76%</strong><span>точность</span></article>
+              </div>
+            </section>
+
+            <section class="profile-progress" aria-labelledby="profile-progress-title">
+              <div class="section-heading">
+                <h2 id="profile-progress-title">Подготовка по предметам</h2>
+                <button type="button">ЕГЭ</button>
+              </div>
+              <div id="profile-progress-list">
+                <article><img src="./assets/subjects/russian.png" alt="" aria-hidden="true"><strong>Русский язык</strong><span>63%</span><progress max="100" value="63">63%</progress></article>
+                <article><img src="./assets/subjects/history.png" alt="" aria-hidden="true"><strong>История</strong><span>41%</span><progress max="100" value="41">41%</progress></article>
+                <article><img src="./assets/subjects/basic-math.png" alt="" aria-hidden="true"><strong>Математика</strong><span>27%</span><progress max="100" value="27">27%</progress></article>
+              </div>
+            </section>
+
+            <section class="achievement-history" aria-labelledby="achievement-title">
+              <div class="section-heading">
+                <h2 id="achievement-title">История достижений</h2>
+                <button type="button">3 новых</button>
+              </div>
+              <article><span></span><strong>Магистр</strong><p>25 дней серии и 840 XP</p></article>
+              <article><span></span><strong>Без ошибок</strong><p>Русский язык: орфоэпия</p></article>
+              <article><span></span><strong>Исторический рывок</strong><p>5 карточек по Петру I</p></article>
+            </section>
+
+            <div class="settings-list">
+              <label class="settings-item import-item">
+                <strong>Импорт заданий</strong>
+                <span>Загрузи JSON-файл с новыми тестами и заданиями</span>
+                <input id="content-import" type="file" accept="application/json">
+              </label>
+              <article class="settings-item">
+                <strong>Уведомления</strong>
+                <span>Ежедневные напоминания включены</span>
+              </article>
+              <article class="settings-item">
+                <strong>Друзья и класс</strong>
+                <span>Код класса: EGE-2026</span>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <nav class="bottom-nav" aria-label="Основная навигация">
+          <a href="#tasks">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 6h10M8 12h10M8 18h6"/><path d="m4 6 .8.8L6.5 5"/></svg>
+            <span>Задания</span>
+          </a>
+          <a href="#rating">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 20V10"/><path d="M12 20V4"/><path d="M17 20v-7"/></svg>
+            <span>Рейтинг</span>
+          </a>
+          <a class="active home-nav" href="#home" aria-current="page">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5"/><path d="M6.5 10.5V20h11v-9.5"/><path d="M10 20v-5h4v5"/></svg>
+            <span>Домой</span>
+          </a>
+          <a href="#materials">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 4h10a2 2 0 0 1 2 2v14H8a2 2 0 0 1-2-2Z"/><path d="M8 4v14a2 2 0 0 0 2 2"/></svg>
+            <span>Материалы</span>
+          </a>
+          <a href="#profile">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M19 12a7.5 7.5 0 0 0-.1-1.2l2-1.5-2-3.5-2.4 1a8 8 0 0 0-2-1.1L14.2 3h-4.4l-.3 2.7a8 8 0 0 0-2 1.1l-2.4-1-2 3.5 2 1.5A7.5 7.5 0 0 0 5 12c0 .4 0 .8.1 1.2l-2 1.5 2 3.5 2.4-1a8 8 0 0 0 2 1.1l.3 2.7h4.4l.3-2.7a8 8 0 0 0 2-1.1l2.4 1 2-3.5-2-1.5c.1-.4.1-.8.1-1.2Z"/></svg>
+            <span>Профиль</span>
+          </a>
+        </nav>
+      </section>
+    </main>
+
+    <script src="./studify-content.js?v=20260607-3"></script>
+    <script src="./app.js?v=20260607-3"></script>
+  </body>
+</html>
