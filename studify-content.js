@@ -85,6 +85,28 @@ window.STUDIFY_CONTENT = {
         }
       ]
     },
+    alexanderIAdvancedTest: {
+  id: "alexanderIAdvancedTest",
+  subjectId: "history",
+  title: "Правление Александра I",
+  subtitle: "История",
+  resultTitle: "Тест завершен",
+  xpReward: 30,
+  questions: [
+    {
+      question: "Какой орган был учреждён в 1801 году как высший законосовещательный орган при Александре I?",
+      answers: ["Государственный совет", "Комитет министров", "Непременный совет", "Сенат"],
+      correct: 2,
+      hint: "Непременный совет был создан в 1801 году."
+    },
+    {
+      question: "Как назывался неофициальный круг ближайших советников Александра I?",
+      answers: ["Непременный совет", "Негласный комитет", "Священный союз", "Комитет министров"],
+      correct: 1,
+      hint: "Негласный комитет действовал в первые годы правления."
+    }
+  ]
+},
     historyTrial1: {
       id: "historyTrial1",
       subjectId: "history",
@@ -321,5 +343,6 @@ window.STUDIFY_CONTENT = {
     { id: "social-law-task", day: "Сегодня", date: "2026-06-08", subjectId: "social", title: "Право: основы Конституции", xp: 30, testId: "socialLaw" },
     { id: "future-perfect-task", day: "Сегодня", date: "2026-06-08", subjectId: "english", title: "Future Perfect", xp: 20, testId: "futurePerfect" },
     { id: "geography-maps-task", day: "Завтра", date: "2026-06-09", subjectId: "geography", title: "География: работа с картой", xp: 20, testId: "geographyMaps" }
+    { id: "alexander-i-advanced-task", day: "Сегодня", date: "2026-06-07", subjectId: "history", title: "Правление Александра I", xp: 30, testId: "alexanderIAdvancedTest" },
   ]
 };
