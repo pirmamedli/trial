@@ -343,6 +343,6 @@ window.STUDIFY_CONTENT = {
     { id: "social-law-task", day: "Сегодня", date: "2026-06-08", subjectId: "social", title: "Право: основы Конституции", xp: 30, testId: "socialLaw" },
     { id: "future-perfect-task", day: "Сегодня", date: "2026-06-08", subjectId: "english", title: "Future Perfect", xp: 20, testId: "futurePerfect" },
     { id: "geography-maps-task", day: "Завтра", date: "2026-06-09", subjectId: "geography", title: "География: работа с картой", xp: 20, testId: "geographyMaps" }
-    { id: "alexander-i-advanced-task", day: "Сегодня", date: "2026-06-07", subjectId: "history", title: "Правление Александра I", xp: 30, testId: "alexanderIAdvancedTest" },
+    { id: "alexander-i-advanced-task", day: "Сегодня", date: "2026-06-07", subjectId: "history", title: "Правление Александра I", xp: 30, testId: "alexanderIAdvancedTest" }
   ]
 };
