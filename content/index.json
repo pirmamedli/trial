@@ -5,6 +5,7 @@
     "tests/history-dates-1825-1914/test.json",
     "tests/russian-orthoepy/test.json",
     "tests/social-economy/test.json",
-    "tests/даты-xviii-века/test.json"
+    "tests/даты-xviii-века/test.json",
+    "tests/правление-екатерины-ii/test.json"
   ]
 }
