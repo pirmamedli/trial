@@ -1,0 +1,31 @@
+{
+  "id": "правление-екатерины-ii-mq6s4yml",
+  "subjectId": "history",
+  "title": "Правление Екатерины II",
+  "subtitle": "История России",
+  "resultTitle": "Поздравляем!",
+  "xpReward": 15,
+  "questions": [
+    {
+      "type": "matching",
+      "question": "Фавориты",
+      "pairs": [
+        {
+          "left": "Петр",
+          "right": "Петр"
+        },
+        {
+          "left": "Екатерина",
+          "right": "Екатерина"
+        }
+      ]
+    }
+  ],
+  "task": {
+    "id": "правление-екатерины-ii-task",
+    "day": "Сегодня",
+    "date": "2026-06-09",
+    "title": "Правление Екатерины II",
+    "xp": 15
+  }
+}
